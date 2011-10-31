@@ -1,0 +1,51 @@
+/* $Id: stylesheet.css 337 2010-12-02 00:45:42Z xycaleth $ */
+* { margin: 0; padding: 0 }
+
+body { margin: 10px; font-size: 100%; line-height: 140%; font-family: Calibri, "Trebuchet MS", Helvetica, sans-serif }
+img { border-width: 0px }
+
+p, div { font-size: 1em }
+p { margin: 10px 0px 10px 0px }
+
+a:active, a:visited { color: #608ab3 }
+a:link { color: #4788cd }
+a:hover { text-decoration: none }
+
+label { cursor: pointer }
+h1, h2, h3, p, ol, ul { padding: 10px 0 }
+ol, ul { padding-left: 40px }
+dd { padding-left: 40px }
+fieldset { width: 100%; margin: 20px -5px; padding: 5px; border: 1px solid #aaa; }
+fieldset fieldset { width: 95%; margin: 0 auto }
+
+select { margin: 0px 3px 0px 3px }
+input, textarea, select { font-family: inherit; font-size: 0.9em; padding: 3px; margin: 3px; }
+input.mainoption { font-weight: bold }
+
+.adminpanel tfoot th { border-top: 1px solid #DDD }
+.adminpanel { margin: 0px auto 0px auto; width: 100%; border-spacing: 0px }
+.adminpanel td, .adminpanel th { padding: 3px 0px 3px 0px }
+.adminpanel th { font-size: 1.1em; text-align: left }
+.adminpanel td { border-top: 1px solid #DDD }
+
+#header { border-bottom: 1px solid #DDD; margin: 0px auto; width: 960px }
+
+#bar { width: 960px; margin: 0px auto }
+#links { float: left; margin-bottom: 25px }
+#login { float: right; text-align: right }
+
+#content { clear: both; width: 900px; margin: 0px auto }
+
+#footer { clear: both; margin: 10px auto 0px auto; border-top: 1px solid #DDD; font-size: 0.75em; width: 960px }
+#footer #copyright { float: right; text-align: right }
+#footer #loadtime { float: left }
+
+#fn_notice { background-color: lightblue; border: 1px solid #85b0be; padding: 10px; list-style-type: none }
+#fn_notice li { border-top: 1px solid #85b0be; padding: 5px }
+#fn_notice li.title { font-variant: small-caps; border-width: 0px; font-weight: bold }
+
+#fn_warning { background-color: pink; border: 1px solid #d798a3; padding: 10px; list-style-type: none }
+#fn_warning li { border-top: 1px solid #d798a3; padding: 5px }
+#fn_warning li.title { font-variant: small-caps; border-width: 0px; font-weight: bold }
+
+.category-selection { border: 1px solid #85b0be; padding: 3px; overflow: auto; width: 200px; max-height: 90px }

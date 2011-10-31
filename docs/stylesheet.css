@@ -1,0 +1,24 @@
+body, td, th {font-family: Verdana, Helvetica, sans-serif; font-size: 11px; line-height: 150% }
+body { background-image: url(images/page_background.jpg); margin: 0px; background-repeat: repeat-x }
+img	{ border-width: 0px }
+p { margin: 10px 0 }
+
+dt { font-weight: bold }
+
+a:link	{ color: #7DB7D1 }
+a:hover	{ text-decoration: none }
+
+h1	{ font-size: 1.6em }
+h2	{ font-size: 1.4em }
+h3	{ font-size: 1.2em }
+
+#layout	{ margin: 0px auto 0px auto; width: 604px; text-align: left; position: relative }
+#footer { clear: both; text-align: center }
+#header { height: 117px; width: 348px }
+#links	{ text-align: center }
+#content #text { background-image: url(images/table_background.png); background-repeat: repeat-y; padding: 0 25px }
+
+.phpcode { background-color: #EDF7FC; border: 1px solid #7DB7D1; font-family: Consolas, "Courier New", Courier, monospace }
+.style1 {color: #0000BB}
+.style2 {color: #007700}
+.style3 {color: #DD0000}

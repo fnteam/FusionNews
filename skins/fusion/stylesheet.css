@@ -1,0 +1,56 @@
+* { margin: 0; padding: 0 }
+body { background-color: #FFF; color: #000; font-size: 100%; background: url(images/page_background.jpg) repeat-x; font-size: 11px; font-family: Verdana, Helvetica, sans-serif }
+
+a:active, a:link, a:visited { color: #7DB7D1 }
+a:hover { text-decoration: none }
+
+hr { margin: 0 auto }
+
+#layout { margin: 0 auto; width: 604px }
+
+fieldset {
+	display: block;
+	width: 100%;
+	border: 1px solid #7DB7D1;
+	padding: 3px;
+	margin: 0 auto;
+}
+
+img { border-width: 0 }
+
+label { cursor: pointer; margin-right: 10px }
+
+fieldset { margin: 20px -5px 0; padding: 5px }
+fieldset fieldset { width: 95%; margin: 0 auto }
+legend { font-weight: bold }
+input { padding: 3px; margin: 2px 0px }
+input, select, textarea { font-family: inherit; font-size: inherit; background-color: #EDF7FC; border: 1px solid #7DB7D1 }
+
+h1, h2, h3, p { padding: 10px 0 }
+h1 { font-size: 1.6em }
+h2 { font-size: 1.4em }
+h3 { font-size: 1.2em }
+
+ul, ol { padding: 10px 0 10px 20px }
+dd { padding-left: 40px }
+
+#header img { display: block }
+#main { background: url(images/table_background.png) repeat-y; padding: 0 25px }
+#login { margin: -45px 0 30px 5px }
+#footer { clear: both; text-align: center }
+
+.mainoption { font-weight: bold }
+
+.adminpanel { border-collapse: collapse; border-spacing: 0px; width: 100% }
+.adminpanel td { border: 1px solid #DCDCDC; padding: 3px 3px 3px 3px }
+.adminpanel th { background-color: whitesmoke; border: 1px solid #DCDCDC; text-align: center; padding: 3px 3px 3px 3px }
+
+#fn_notice { background-color: lightblue; border: 1px solid #85b0be; padding: 10px; list-style-type: none }
+#fn_notice li { border-top: 1px solid #85b0be; padding: 5px }
+#fn_notice li.title { font-variant: small-caps; border-width: 0px; font-weight: bold }
+
+#fn_warning { background-color: pink; border: 1px solid #d798a3; padding: 10px; list-style-type: none }
+#fn_warning li { border-top: 1px solid #d798a3; padding: 5px }
+#fn_warning li.title { font-variant: small-caps; border-width: 0px; font-weight: bold }
+
+.category-selection { border: 1px solid #85b0be; padding: 3px; overflow: auto; width: 95%; max-height: 65px }
