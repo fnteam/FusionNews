@@ -516,7 +516,7 @@ else if ( $step == 5 )
     // user to make the post.
     //////////////////////////////////////////////////////////////
     $current_time	= time();
-    $formatted_date	= date ('Y-m-d H:i:s T', $current_time);
+    $formatted_date	= date ('Y-m-d H:i:s T');
     $access_denied = '<?php die (\'You may not access this file.\'); ?>';
 
     // Here's what the subject and news posts are going to be so I can change
@@ -538,28 +538,40 @@ else if ( $step == 5 )
 
     // And then write this user's name to the category file.
     safe_write ('categories.php', 'wb', $access_denied . "\n". '1|<|General|<||<|' . $username . '|<|' . "\n");
+    
+    // Generate the include code
+    $code = "<?php
+    
+include '" . FNEWS_ROOT_PATH . "news.php';
 
-    $star_pass = str_repeat ('*', strlen ($password));
-
-    echo <<< html
-<p>{$lang['Install_success']}</p>
-<ul>
-<li>{$lang['Username']} $username</li>
-<li>{$lang['Nickname']} $nick</li>
-<li>{$lang['Password']} $star_pass</li>
-</ul>
-<p>{$lang['Delete_install_file']}</p>
-html;
-
+?>";
+    $code = htmlspecialchars ($code);
+    
+    @unlink ('install.php');
     @safe_write ('install.lock', 'wb', NULL);
-
     clearstatcache();
+    $create_lock = '';
+    $delete_file = '';
     if ( !file_exists ('install.lock') )
     {
-        echo '<p>' . $lang['Create_install_lock'] . '</p>';
+        $create_lock = '<p>' . $lang['Create_install_lock'] . '</p>';
+    }
+    
+    if ( file_exists ('install.php') )
+    {
+        $delete_file = '<p>' . $lang['Delete_install_file'] . '</p>';
     }
 
-    echo '<p><a href="index.php">' . $lang['Login_link'] . '</a></p>';
+    echo <<< html
+<h2>{$lang['Almost_there']}</h2>
+<p>{$lang['Insert_code']}</p>
+<div style="text-align:center"><textarea cols="60" rows="5">{$code}</textarea></div>
+<p>{$lang['Install_success']}</p>
+
+{$delete_file}
+{$create_lock}
+<p><a href="index.php">{$lang['Login_link']}</a></p>
+html;
 }
 
 display_install_output ($lang, array (

@@ -867,10 +867,12 @@ $lang['install'] = array (
 	'Fields_left_blank'		=> 'One or more of the fields were left blank',
 	'Invalid_email'			=> 'You entered an invalid email address.',
 	'Passwords_not_matching'	=> 'The passwords you entered do not match.',
-	'Install_success'		=> 'And that\'s it! You have successfully installed Fusion News. You can now log in using the username and password you entered on the previous page',
+    'Almost_there'          => "You're almost there!",
+    'Insert_code'           => "All that's left for you to do is to copy the PHP code below, and paste it into the HTML of your website where you want the news to show up.",
+	'Install_success'		=> "Once you've done that, you can log in using the username and password you entered on the previous step.",
 	'Delete_install_file'		=> 'Before logging in, <b>you should delete the install.php file</b> as there is a chance someone else could reinstall Fusion News.',
 	'Create_install_lock'		=> 'You will also need to create a blank file called <b>install.lock</b>, and upload it to to your Fusion News directory.',
-	'Login_link'			=> 'Click here to log in!',
+	'Login_link'			=> 'Proceed to the login page &raquo;',
 );
 
 /**#@-*/
