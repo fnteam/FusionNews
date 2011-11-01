@@ -26,7 +26,7 @@
  
 function single_line ( $str )
 {
-    return str_replace ('\n', '', $str);
+    return str_replace ("\n", '', $str);
 }
 
 /**

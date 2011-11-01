@@ -4469,13 +4469,15 @@ else if ( $id == 'editsmillie')
         trigger_error ($ind298, E_USER_WARNING);
     }
 
-    $code_smillie = ( isset ($PVARS['code_smillie']) ) ? array_map ('single_line', $PVARS['code_smillie']) : array();
+    $code_smillie = ( isset ($PVARS['code_smillie']) ) ? $PVARS['code_smillie'] : array();
     $del_smillie = ( isset ($PVARS['del_smillie']) ) ? $PVARS['del_smillie'] : array();
-    $smiley_image = ( isset ($PVARS['smiley_image']) ) ? array_map ('single_line', $PVARS['smiley_image']) : array();
+    $smiley_image = ( isset ($PVARS['smiley_image']) ) ? $PVARS['smiley_image'] : array();
     
     function is_empty ( $str ) { return empty ($str); }
     
-    $code_smillie = array_map ('fn_trim', $code_smillie);
+    $code_smillie = array_map ('single_line',
+        array_map ('fn_trim', $code_smillie)
+    );
     $blank_smileys = array_filter ($code_smillie, 'is_empty');
     if ( count ($blank_smileys) > 0 )
     {
