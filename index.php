@@ -3229,6 +3229,19 @@ else if ( $id == 'savebadwordfile' )
     $case_sens = ( isset ($PVARS['case_sens']) ) ? $PVARS['case_sens'] : array();
     $type = ( isset ($PVARS['type']) ) ? $PVARS['type'] : array();
 
+    for ( $i = 0; $i < $num_words; $i++ )
+    {
+        if ( isset ($del[$i]) ) continue;
+        
+        if ( $type[$i] == 2 ) // regex
+        {
+            if ( @preg_match ($find[$i], '') === false )
+            {
+                trigger_error ($ind106, E_USER_WARNING);
+            }
+        }
+    }
+    
     if ( sizeof ($case_sens) != $num_words )
     {
         for ( $i = 0; $i < $num_words; $i++ )
@@ -3270,11 +3283,23 @@ else if ( $id == 'addbadwords' )
     }
     
     $num_words = ( isset ($PVARS['num_words']) ) ? $PVARS['num_words'] : 0;
-    $del = ( isset ($PVARS['del']) ) ? $PVARS['del'] : array();
     $find = ( isset ($PVARS['find']) ) ? array_map ('single_line', $PVARS['find']) : array();
     $replace = ( isset ($PVARS['replace']) ) ? array_map ('single_line', $PVARS['replace']) : array();
     $case_sens = ( isset ($PVARS['case_sens']) ) ? $PVARS['case_sens'] : array();
     $type = ( isset ($PVARS['type']) ) ? $PVARS['type'] : array();
+    
+    for ( $i = 0; $i < 5; $i++ )
+    {
+        if ( !$find[$i] && !$replace[$i] ) continue;
+        
+        if ( $type[$i] == 2 ) // regex
+        {
+            if ( @preg_match ($find[$i], '') === false )
+            {
+                trigger_error ($ind106, E_USER_WARNING);
+            }
+        }
+    }
 
     if ( sizeof ($case_sens) != 5 )
     {
