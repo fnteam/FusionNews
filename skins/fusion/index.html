@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- $Id: index.html 376 2011-04-27 21:28:34Z xycaleth $ -->
+<head>
+	<title>Fusion News: {title}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link href="./skins/fusion/stylesheet.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jsfunc.js"></script>
+</head>
+
+<body>
+<div id="layout">
+	<div id="header">
+		<img src="./skins/fusion/images/header.png" alt="Fusion News" title="Fusion News" width="904" height="117" />
+		<div id="login">{login}</div>
+	</div>
+	<div id="main">
+		<div id="links">{linksn}</div>
+		<div id="content">
+			<h1>{title}</h1>
+			{main}
+		</div>
+	</div>
+	<div id="footer">
+		<img src="./skins/fusion/images/table_bottom.png" alt="" width="904" height="25" />
+		<p>Page loaded in {loadtime} seconds.</p>
+		<p>Powered by <a href="http://www.fusionnews.net/" onclick="window.open (this.href); return false;">Fusion News</a> v{curve} &copy; 2011, FusionNews.net</p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+$Id: CHANGELOG 347 2010-12-24 15:03:34Z xycaleth $
+This file lists the changes from version to version.
+
+Fusion News v3.9.6:
+- Added new WYSIWYG editor.
+- Added saving of name/email on comments page.
+- Added CAPTCHA to send to friend page.
+- Changed the CAPTCHA style to keep spam bots at bay for a while.
+- Fixed bug where unvalidated comments counted towards page count on comments page.
+- Fixed bug where [url][/url] BBCode was not case-insensitive.
+- Fixed bug where BBCode was not being replaced.
+- Fixed bug where comments could not be deleted.
+- Fixed bug where smiley text was not being saved properly (intentional backslashes being removed).
+- Fixed some more incorrect uses of format_message
+- Fixed bug where new lines in the middle of a BBCode tag would break it.
+- Fixed error message shown when no smileys are in the database.
+- Fixed incorrect error message when adding smileys.
+- Archive can now include full news pages.
+- Improved the RSS feed generator to output HTML properly.
+
+Fusion News v3.9.5:
+- Fixed bug in search function where HTML wasn't removed from the news properly.
+- Fixed bug where new lines were not shown in news previews.
+- Fixed bug where the successful login page shows you are not logged in.
+- Fixed problem with comments not being correctly formatted in manage comments page.
+- Fixed bug with set_magic_quotes_runtime and PHP 5.3.
+- Fixed security hole in delete uploads page which allowed any file to be deleted.
+- Fixed javascript bug with inserting BBCode/smiley and positioning the caret.
+- Fixed bug in send.php which allowed users to send emails for a non-existant news item.
+- Fixed problem with timezones in PHP versions >= 5.10
+- Added a simple search option to search.php.
+- Added validation rules for config settings.
+- Added a custom number of headlines can now be set per inclusion.
+- Added a number of new settings that can be applied to news and headlines inclusions.
+- Improved user selection menu.
+- Improved news syndication page.
+- Improved category selection menu to use checkboxes.
+- Replaced some code to use native PHP functions instead.
+- Changed MIME type for rss.php to application/xml+rss. This may cause some web browsers to download the rss file instead of displaying it.
+- For posts whose writers no longer exist, their username will be shown in place of their display name.
+- Removed comment validation for comments made by news reporters.
+- Code optimisations
+
+Fusion News v3.9.4:
+- Fixed bug in headlines which prevented the maximum number of headlines to be shown when a category is specified.
+- Fixed bug where adding a category wouldn't work.
+- Fixed bug in headlines which prevented any succeeding included headlines to show news from all categories.
+- Fixed bug on edit posts page which cleared the search filter when a different page number was selected.
+- Fixed bug for login problems on Windows IIS servers.
+- Fixed the 'one-less' bug for the number of headlines shown
+- Fixed bug with &br; not being replaced in searched news.
+- Fixed the URL BBcode.
+- Fixed a number of language typos.
+- Fixed bug with updating an existing comment which overwrote all other comments in the same file.
+- Fixed bug which prevented smileys and BBCode from being inserted into the edit comments textarea.
+- Fixed bug which prevented new lines to be shown in the textarea of the edit comments page.
+- Fixed bug which caused all smileys to be deleted when the user clicked the update button
+- Fixed bug which prevented smileys from being uploaded.
+- Fixed bug in upload_file which prevented the image from being CHMODed to 644. Also added extra check for deleting the file, just in case the file is already deleted.
+- Made a few fixes for PHP version compatibility issues with PHP versions >= 5.1.0 and 6.0.0-dev.
+- Fixed rare case of invalid form submission.
+- Fixed bug which prevented posts from being deleted.
+- Fixed bug with word filter with the regex option.
+- Fixed bug with HTML entities in smiley BBcode.
+- Fixed problem with no message being displayed if a blank smiley BBcode was attempted to be added.
+
+- Forced news posts per page to be greater than zero.
+- IP now displays with '(banned)' text if the IP is banned in the comments page.
+- Comments, full story and tell a friend pages now display on their own page if they are chosen to have a pop-up window.
+- Corrected the URL displayed in send-to-friend emails - it now points directly to fullnews.php.
+- Welcome page in control panel now displays any comments requiring validation.
+- Time offset values are now restricted within the range -24 to 24.
+- Reordered the manage comments page to have the 'Validate Comments' section come before the list of articles.
+
+- Created a reduced pagination list for news pagination.
+- Added output buffering to all pages.
+- Added percentage widths to various table columns.
+- Added redirect links on the post-smiley-upload page.
+- Added extra validation to time offset when editing a user.
+- Added missing title to 'Upload More Images' pop-up.
+- Added a specialized clear filter button to the edit posts page.
+
+- Removed the need for $fn_news_url when including archives.
+- Completely removed the 'plugin system'
+- Removed disabled checks (checking for {send}, {comments}, etc)
+- Removed the word wrap setting from the page.
+
+Fusion News v3.9.3:
+- Fixed bug which prevented reporters from deleting their own posts (thanks to ricrat).
+- Replaced all list() = explode()... functions to use get_line_data().
+- Fixed a bug with edit posts where users could edit posts which didn't belong to categories they could post in.
+- Fixed a bug where posts weren't ordered by date order in the manage comments page.
+- Fixed bug where pagination wouldn't show if there were no comments posted.
+- Fixed bug in search feature where choosing weeks didn't work properly.
+- Optimised search feature hopefully.
+- Subject in RSS feeds now have CDATA tags
+- Fixed bug in news.php which caused it to look for news files which didn't exist.
+- Added lost password page.
+- Fixed minor bug in RSS feed (trying to separate a string...)
+- {cat_name} can now be used in RSS titles.
+- Fixed bug #1 (see forums)
+- Corrected error which caused the full news to be displayed, rather than the 'Read More' link.
+- Improved the send to friend page.
+- Added output buffering to the RSS feed.
+- Updated copyright year in send to friend template.
+- Fixed bug #3 (see forums)
+- Minimum PHP version required is now 4.3.0.
+- Fixed slight problem with headlines not linking properly to news URLs which already had a query string in it.
+- Added $fn_news_url variable when displaying headlines through the control panel.
+- Fixed the search function. HTML is completely removed now (including smilies) to make it easier.
+- Fixed bug #5 (news not displaying properly when included in a function or class method).
+- Fixed problem with comments and send to friend links not working in archive.
+- Fixed problem with comments not replacing the bar (|) properly for next/prev pages.
+- Fixed problem with headlines not linking to the correct page.
+- Improved the News and RSS syndication page.
+- Updated look of image uploading function.
+- Fixed bug when deleting uploads which caused the redirect text to be displayed more than once.

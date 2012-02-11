@@ -1,0 +1,274 @@
+/* $Id: stylesheet.css 378 2011-07-31 12:35:56Z xycaleth $ */
+
+/*********************************************************
+ HTML Elements
+*********************************************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 10px;
+    font-size: 100%;
+    line-height: 140%;
+    font-family: Calibri, "Trebuchet MS", Helvetica, sans-serif;
+}
+
+img {
+    border-width: 0;
+}
+
+p, div {
+    font-size: 1em;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a:active, a:visited {
+    color: #608ab3;
+}
+
+a:link {
+    color: #4788cd;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+h1, h2, h3, p, ol, ul {
+    padding: 10px 0;
+}
+
+ol, ul {
+    padding-left: 40px;
+}
+
+dd {
+    padding-left: 40px;
+}
+
+fieldset {
+    width: 100%;
+    border: 1px solid #aaa;
+    padding: 5px;
+    margin: 10px -5px;
+}
+
+fieldset p {
+    clear: both;
+    margin: 0;
+    padding: 0;
+    min-height: 1.9em;
+}
+
+fieldset p label {
+    display: block;
+    float: left;
+    width: 40%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+fieldset p span.label {
+    display: block;
+    float: left;
+    width: 40%;
+    font-weight: bold;
+}
+
+fieldset p span.description {
+    line-height: 140%;
+    clear: left;
+    display: block;
+    float: left;
+    font-size: 0.8em;
+    color: #333;
+    width: 40%;
+}
+
+fieldset.buttons {
+    text-align: center;
+}
+
+fieldset.buttons input {
+    border-color: #aaa;
+}
+
+fieldset.buttons input:hover {
+    border-color: #000;
+}
+
+select {
+    margin: 0 3px;
+}
+
+input, textarea, select {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    font-family: inherit;
+    font-size: 0.9em;
+    padding: 3px;
+    margin: 3px; 
+}
+
+input:hover, textarea:hover, select:hover {
+    border: 1px solid #4788cd;
+}
+
+input.mainoption {
+    font-weight: bold;
+}
+
+table tr th {
+    text-align: left;
+}
+
+.fullwidth {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.row-grid td {
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+}
+
+.checkbox-column {
+    width: 25px;
+}
+
+.adminpanel tfoot th {
+    border-top: 1px solid #DDD;
+}
+
+.adminpanel {
+    margin: 0 auto;
+    width: 100%;
+    border-spacing: 0;
+}
+
+.adminpanel td, .adminpanel th {
+    padding: 3px 0;
+}
+
+.adminpanel th {
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.adminpanel td {
+    border-top: 1px solid #DDD;
+}
+
+.category-selection {
+    border: 1px solid #85b0be;
+    padding: 3px;
+    overflow: auto;
+    width: 200px;
+    max-height: 90px;
+}
+
+.two-column-left {
+    float: left;
+    width: 50%;
+}
+
+.two-column-right {
+    float: left;
+}
+
+.centered {
+    text-align: center;
+}
+
+/*********************************************************
+ Layout elements
+*********************************************************/
+#header {
+    border-bottom: 1px solid #DDD;
+    margin: 0 auto;
+    width: 960px;
+}
+
+#bar {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#links {
+    float: left;
+    margin-bottom: 25px;
+}
+
+#login {
+    float: right; 
+    text-align: right;
+}
+
+#content {
+    clear: both;
+    width: 900px;
+    margin: 0 auto;
+}
+
+#footer {
+    clear: both;
+    margin: 10px auto 0 auto;
+    border-top: 1px solid #DDD;
+    font-size: 0.75em;
+    width: 960px;
+}
+
+#footer #copyright {
+    float: right;
+    text-align: right;
+}
+
+#footer #loadtime {
+    float: left;
+}
+
+#fn_notice {
+    background-color: lightblue;
+    border: 1px solid #85b0be;
+    padding: 10px;
+    list-style-type: none;
+}
+
+#fn_notice li {
+    border-top: 1px solid #85b0be;
+    padding: 5px;
+}
+
+#fn_notice li.title {
+    font-variant: small-caps;
+    border-width: 0px;
+    font-weight: bold;
+}
+
+#fn_warning {
+    background-color: pink;
+    border: 1px solid #d798a3;
+    padding: 10px;
+    list-style-type: none;
+}
+
+#fn_warning li {
+    border-top: 1px solid #d798a3;
+    padding: 5px;
+}
+
+#fn_warning li.title {
+    font-variant: small-caps;
+    border-width: 0px;
+    font-weight: bold;
+}

@@ -1,0 +1,1 @@
+{linkstart}{subject}{linkend} posted by {user} on {date}<br />

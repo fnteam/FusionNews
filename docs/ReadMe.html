@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- $Id: ReadMe.html 343 2010-12-24 12:42:58Z xycaleth $ -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Fusion News ReadMe File</title>
+	<link href="./stylesheet.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="layout">
+	<div id="header">
+		<img src="./images/header.png" alt="Fusion News" title="Fusion News" width="604" height="117" />
+	</div>
+	<div id="content">
+		<div id="text">
+			<div id="links"><a href="#requirements">Requirements</a> | <a href="#installation">Installation</a> | <a href="#upgrading">Upgrading</a> | <a href="#problems">Reporting Problems</a> | <a href="#showingnews">Showing News</a></div>
+			
+			<h1><a name="requirements" id="requirements"></a>Requirements</h1>
+			<p>The following are required for Fusion News to function:</p>
+			<ul>
+				<li>PHP 4.3.0 or better</li>
+			</ul>
+			<p>The following are optional, but add extra functionality to Fusion News, each of which are explained.</p>
+			<dl>
+                <dt>GD Library 2.0 or better, with TrueType Font support</dt>
+                <dd>To generate CAPTCHA image for comments and send to friend features.</dd>
+                
+				<dt>File uploads enabled</dt>
+                <dd>Allows images to be uploaded when adding a new post, so they can be shown in the post.</dd>
+            </dl>
+			<p>( <a href="#">Back to top</a> )</p>
+			
+			<h1><a name="installation" id="installation"></a>New Installation</h1>
+			<p>You should upload all of the files located in the 'upload' directory to a directory on your website. If you are using a FTP client, all *.html, *.php, *.css , and *.js files should be uploaded in <strong>ASCII</strong> mode, and the remaining files in <strong>Binary</strong> mode. Most FTP clients available will do this automatically, but make sure that it is uploading the files correctly.</p>
+			<p>The installation script was created to make it easy to use, and with the least amount of user input necessary. To begin the installation process, go to the install.php file through your web browser. If your domain name is http://www.mydomain.com, and you uploaded Fusion News to a directory called 'news', you would type in the address http://www.mydomain.com/news/install.php.</p>
+			<p>Once there, follow the instructions. After the installation process is complete, <strong>ensure that you delete the install.php file</strong> to prevent any one from attempting to reinstall Fusion News.</p>
+			<p>( <a href="#">Back to top</a> )</p>
+			
+			<h1><a name="upgrading" id="upgrading"></a>Upgrading</h1>
+			<h2>From 3.8.x or below</h2>
+			<p>To upgrade, you should upload <strong>only the /upgrade directory</strong> to begin with, which is located in the 'upload' directory. Then run the /upgrade/index.php file from your browser and follow the on-screen instructions. Once the upgrade process has finished, upload the files stated in the list given.</p>
+			<p>After finishing upgrading, make sure you delete the /upgrade directory.</p>
+			<h3>Important Changes</h3>
+			<p>There are some important changes to the functionality of Fusion News from 3.8.x or below, which you should know about:</p>
+			<ul>
+				<li>static_news.html has been removed, and replaced with news.php. See below for how you should display your news.</li>
+			</ul>
+			
+			<h2>From 3.9.x</h2>
+			<p>Create backups of the following files:</p>
+			<ul>
+				<li>archive.php</li>
+				<li>comments.php</li>
+				<li>common.php</li>
+				<li>fullnews.php</li>
+				<li>functions.php</li>
+				<li>headlines.php</li>
+				<li>index.php</li>
+                <li>jsfunc.js</li>
+				<li>language.db.php</li>
+				<li>news.php</li>
+				<li>rss.php</li>
+				<li>search.php</li>
+				<li>send.php</li>
+				<li>upload.php</li>
+				<li>skins/fusion/index.html</li>
+				<li>skins/fusion/stylesheet.css</li>
+				<li>skins/simplicity/stylesheet.css</li>
+			</ul>
+			<p>Overwrite these old files, with the new versions provided in the ZIP file.</p>
+			<p>If upgrading from a version <strong>before 3.9.3</strong>:</p>
+			<ol>
+				<li>Back up smillies.php.</li>
+				<li>Open smillies.php.</li>
+				<li>Add |&lt;| to the end of each line.</li>
+				<li>At the beginning of the file, create a new line with this text:
+					<p class="phpcode"><span class="style1">&lt;?php</span> <span class="style2">die (</span><span class="style3">'You may not access this file.'</span><span class="style2">);</span> <span class="style1">?&gt;</span></p></li>
+				<li>If no blank line exists at the end of the file, create one.</li>
+				<li>Save, close and re-upload smillies.php.</li>
+			</ol>
+            <p>If upgrading from a version <strong>before 3.9.5</strong>:</p>
+            <ol>
+                <li>Delete the <strong>img</strong> directory.</li>
+                <li>Upload the img directory contained in the zipped file.</li>
+            </ol>
+			<p>( <a href="#">Back to top</a> )</p>
+			
+			<h1><a name="problems" id="problems"></a>Reporting Problems</h1>
+			<p>Please report any problems you find to the Fusion News forum of the <a href="http://www.fusionnews.net/forums/index.php" onclick="window.open(this.href); return false;">FusionNews.net Support Forum</a>.</p>
+			<p>( <a href="#">Back to top</a> )</p>
+			
+			<h1><a name="showingnews" id="showingnews"></a>Displaying News and Headlines</h1>
+			<p>Fusion News can automatically generate the PHP code you need to insert into your website, to display your news and/or headlines. This facility can be found by following the links (after you have logged in), <strong>Admin</strong> and then <strong>News and RSS Syndication</strong>.</p>
+			
+			<h2>RSS Feeds</h2>
+			<p>To begin with, ensure that RSS feeds have been enabled. To do this, click the <strong>Addon Options</strong> link on the <strong>Admin</strong> page. The checkbox under the <strong>RSS Feed</strong> section, labelled 'Enable RSS Feed' should be checked.</p>
+			<p>Below that, the RSS feed name, description and encoding can be changed, and changes will come into affect once the settings have been saved.</p>
+			<p>Every time a new post is made, or a post is changed the RSS feed file will be updated accordingly. The RSS feed file is called <strong>rss.php</strong>. To receive feeds of a particular category, <code>?fn_category=category_id</code> should be used, where category_id is the ID of the desired category.</p>
+			<p>( <a href="#">Back to top</a> )</p>
+		</div>
+		<div id="footer">
+			<img src="./images/table_bottom.png" alt="" width="604" height="25" />
+			<p>Powered by <a href="http://www.fusionnews.net/" onclick="window.open (this.href); return false;">Fusion News</a> &copy; 2006 - 2010, FusionNews.net</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
