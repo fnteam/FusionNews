@@ -4319,14 +4319,6 @@ function display_output ( $title, $skin, $userdata )
 	));
 
 	//-----------------------------------------------
-	// Do this very last to get the most accurate
-	// result possible
-	//-----------------------------------------------
-	$split = explode (' ', microtime());
-	$end_time = (float)$split[0] + (float)$split[1];
-	$cs = str_replace ('{loadtime}', sprintf ('%.6f', $end_time - $start_time), $cs);
-
-	//-----------------------------------------------
 	// Blammo, out comes the end product :p
 	//-----------------------------------------------
 	echo $cs;

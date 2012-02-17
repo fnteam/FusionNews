@@ -24,15 +24,25 @@
  * along with Fusion News.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+ 
+define ('FN_ROOT', dirname (__FILE__));
 
-/**#@+
- * @ignore
- */
-$split = explode (' ', microtime());
-$start_time = (float)$split[0] + (float)$split[1];
-/**#@-*/
-
+// Set the include path to load files from correct directories.
+set_include_path (
+    implode (
+        PATH_SEPARATOR,
+        array (
+            get_include_path(),
+            FN_ROOT . DIRECTORY_SEPARATOR . 'libraries',
+            FN_ROOT . DIRECTORY_SEPARATOR . 'application'
+        )
+    )
+);
+ 
 include './common.php';
+require 'FN/Loader.php';
+
+FN_Loader::init();
 
 /**
  * The title for the current page
