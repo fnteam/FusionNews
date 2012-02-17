@@ -2127,7 +2127,6 @@ function is_login_valid ( $username, $password )
 function login_form ( $next_url = null )
 {
     global $lang;
-    include 'libraries/FN/Session.php';
     
 ?>
 <?php if ( FN_Session::flashMessageExists() ): ?>

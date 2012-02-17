@@ -33,8 +33,8 @@ set_include_path (
         PATH_SEPARATOR,
         array (
             get_include_path(),
-            FN_ROOT . DIRECTORY_SEPARATOR . 'libraries',
-            FN_ROOT . DIRECTORY_SEPARATOR . 'application'
+            FN_ROOT . DIRECTORY_SEPARATOR . 'application',
+            FN_ROOT . DIRECTORY_SEPARATOR . 'libraries'
         )
     )
 );

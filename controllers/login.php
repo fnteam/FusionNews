@@ -13,8 +13,6 @@ function redirect ( $code, $location )
     exit;
 }
 
-include 'libraries/FN/Session.php';
-
 if ( has_access (NEWS_REPORTER) )
 {
     trigger_error ($lang['ind294'], E_USER_WARNING);
