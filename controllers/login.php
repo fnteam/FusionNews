@@ -1,5 +1,20 @@
 <?php
 
+function redirect ( $code, $location )
+{
+    $http_codenames = array (
+        303 => 'See Other'
+    );
+    
+    assert (array_key_exists ($code, $http_codenames));
+    
+    header ('HTTP/1.1 ' . $code . ' ' . $http_codenames[$code]);
+    header ('Location: ' . $location);
+    exit;
+}
+
+include 'libraries/FN/Session.php';
+
 if ( has_access (NEWS_REPORTER) )
 {
     trigger_error ($lang['ind294'], E_USER_WARNING);
@@ -12,12 +27,14 @@ $next = ( isset ($PVARS['next']) ) ? 'index.php?' . urldecode ($PVARS['next']) :
 
 if ( !$post_user || !$post_pass )
 {
-    trigger_error ($lang['ind18'], E_USER_WARNING);
+    FN_Session::setFlashMessage ($lang['ind18']);
+    redirect (303, '?');
 }
 
 if ( !is_login_valid ($post_user, $post_pass) )
 {
-    trigger_error ($lang['ind18b'], E_USER_WARNING);
+    FN_Session::setFlashMessage ($lang['ind18b']);
+    redirect (303, '?');
 }
 else
 {

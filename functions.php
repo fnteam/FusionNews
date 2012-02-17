@@ -2124,12 +2124,14 @@ function is_login_valid ( $username, $password )
     return false;
 }
 
-function login_form ( $message = null, $next_url = null )
+function login_form ( $next_url = null )
 {
     global $lang;
+    include 'libraries/FN/Session.php';
+    
 ?>
-<?php if ( $message !== null ): ?>
-<p><?php echo $message; ?></p>
+<?php if ( FN_Session::flashMessageExists() ): ?>
+<p><?php echo FN_Session::getFlashMessage(); ?></p>
 <?php endif; ?>
 <form action="index.php?id=login" method="post">
 <?php if ( $next_url !== null ): ?>
